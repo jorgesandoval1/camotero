@@ -15,7 +15,7 @@
         <script type="text/javascript">
             preguntar();
             clientId = 'client_id_' + Math.floor((Math.random() * 1000000) + 1);
-            client = new Paho.MQTT.Client("broker.hivemq.com", 8000, clientId);
+            client = new Paho.MQTT.Client("broker.mqttdashboard.com", 8000, clientId);
             
             client.onConnectionLost = onConnectionLost;
             client.onMessageArrived = onMessageArrived;
@@ -23,6 +23,8 @@
             options = 
             {
                 useSSL: true,
+                userName: "camotero",
+                password: "32",
                 onSuccess:onConnect,
                 onFailure:doFail
             }
